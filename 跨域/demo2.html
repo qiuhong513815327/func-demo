@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn1">使用script发送get请求</button>
+  </body>
+</html>
+<script>
+  var btn1 = document.getElementById("btn1");
+  btn1.onclick = () => {
+    let scrip = document.createElement("script");
+    scrip.type = "text/javascript";
+    scrip.src = "http://127.0.0.1:9000/getJsonp?callback=fn1";
+    document.body.append(scrip);
+    setTimeout;
+  };
+  const fn1 = (data) => {
+    console.log(data);
+  };
+</script>
