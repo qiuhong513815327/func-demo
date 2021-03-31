@@ -1,0 +1,50 @@
+<!-- img和link标签处理方案 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn1">axios-get请求</button>
+    <button id="btn2">axios-post请求</button>
+    <button id="btn3">img标签请求</button>
+    <button id="btn4">link标签请求</button>
+  </body>
+</html>
+<script src="./axios.min.js"></script>
+<script>
+  let btn1 = document.getElementById("btn1");
+  btn1.onclick = async () => {
+    let res = axios.get("http://127.0.0.1:9000/getData");
+    console.log(res);
+  };
+  let btn2 = document.getElementById("btn2");
+  btn2.onclick = async () => {
+    let res = axios.get("http://127.0.0.1:9000/postData");
+    console.log(res);
+  };
+  let btn3 = document.getElementById("btn3");
+  btn3.onclick = async () => {
+    let img = document.createElement("img");
+    img.src = "http://127.0.0.1:9000/getImg";
+    img.style.display = "none";
+    document.body.appendChild(img);
+    setTimeout(() => {
+      document.body.removeChild(img);
+    }, 2000);
+  };
+  let btn4 = document.getElementById("btn4");
+  btn4.onclick = async () => {
+    let link = document.createElement("link");
+    link.href = "http://127.0.0.1:9000/getImg";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+    setTimeout(() => {
+      document.head.removeChild(link);
+    }, 2000);
+  };
+</script>
+<!-- 我这边是通过vscode的live-server插件起服务打开文件，端口自己设置的8088，http://127.0.0.1:8088/跨域/demo1.html -->
