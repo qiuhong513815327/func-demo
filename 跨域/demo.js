@@ -9,7 +9,7 @@ const app = new Koa();
 const router = new Router();
 
 router.get("/getData", (ctx, next) => {
-  console.log("收到请求");
+  console.log("收到getData请求");
   ctx.body = { name: "get" };
   next();
 });
@@ -19,6 +19,7 @@ router.get("/getImg", (ctx, next) => {
   next();
 });
 router.get("/getJsonp", (ctx, next) => {
+  console.log("收到getJsonp请求");
   let obj = { name: "jsonp" };
   let res = `${ctx.query.callback}(${JSON.stringify(obj)})`;
   console.log(res);
@@ -26,6 +27,7 @@ router.get("/getJsonp", (ctx, next) => {
   next();
 });
 router.post("/postData", (ctx, next) => {
+  console.log("收到postData请求");
   ctx.body = { name: "post" };
   next();
 });

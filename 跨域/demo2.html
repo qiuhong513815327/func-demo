@@ -16,8 +16,10 @@
     let scrip = document.createElement("script");
     scrip.type = "text/javascript";
     scrip.src = "http://127.0.0.1:9000/getJsonp?callback=fn1";
-    document.body.append(scrip);
-    setTimeout;
+    document.body.appendChild(scrip);
+    setTimeout(() => {
+      document.body.removeChild(scrip);
+    }, 1000);
   };
   const fn1 = (data) => {
     console.log(data);
