@@ -8,6 +8,11 @@ const img = fs.readFileSync(imgPath);
 const app = new Koa();
 const router = new Router();
 
+app.use((ctx, next) => {
+  console.log(ctx.method);
+  next();
+});
+
 router.get("/getData", (ctx, next) => {
   console.log("收到getData请求");
   ctx.body = { name: "get" };
