@@ -17,16 +17,15 @@
     <button id="btn1">服务器代理跨域</button>
   </body>
 </html>
-<script src="./axios.min.js"></script>
+<script src="axios.min.js"></script>
 <script>
   var btn1 = document.getElementById("btn1");
   btn1.onclick = async () => {
     try {
-      let res = await axios.get("http://127.0.0.1:7000/getData");
+      let res = await axios.get("/getData");
       console.log(res);
     } catch (e) {
       console.error(e);
     }
   };
 </script>
-<!-- 使用demo4.js起服务 -->

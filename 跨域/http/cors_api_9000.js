@@ -25,5 +25,5 @@ router.post("/postData", (ctx, next) => {
 });
 app.use(router.routes()).use(router.allowedMethods());
 app.listen(9000, () => {
-  console.log("服务启动:::9000");
+  console.log("app started at port 9000...");
 });

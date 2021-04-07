@@ -1,9 +1,10 @@
 const Koa = require("koa");
 const Router = require("koa-router");
+
 const fs = require("fs");
 const path = require("path");
 
-const imgPath = path.join(__dirname + "/imgs/0.jpg");
+const imgPath = path.join(__dirname, "../imgs/0.jpg");
 const img = fs.readFileSync(imgPath);
 const app = new Koa();
 const router = new Router();
